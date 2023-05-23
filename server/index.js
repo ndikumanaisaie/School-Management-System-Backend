@@ -1,43 +1,30 @@
-/* global use, db */
-// MongoDB Playground
-// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import morgan from 'morgan';
+import dotenv from 'dotenv';
 
-const database = 'SCHOOL_MANAGEMENT_DB';
-const collection = 'users';
+// import userRoute from './routes/users.js';
+// import postRoute from './routes/posts.js';
 
-// Create a new database.
-use(database);
+const app = express();
+dotenv.config();
 
-// Create a new collection.
-db.createCollection(collection);
+app.use(morgan('dev'));
+app.use(express.json({ limit: '30mb', extended: true }));
+app.use(express.urlencoded({ limit: '30mb', extended: true }));
+app.use(cors());
+// app.use('/users', userRoute);
+// app.use('/posts', postRoute);
+app.get('/', (req, res) => {
+	res.send('APP IS RUNNING');
+});
 
-// The prototype form to create a collection:
-/* db.createCollection( <name>,
-  {
-    capped: <boolean>,
-    autoIndexId: <boolean>,
-    size: <number>,
-    max: <number>,
-    storageEngine: <document>,
-    validator: <document>,
-    validationLevel: <string>,
-    validationAction: <string>,
-    indexOptionDefaults: <document>,
-    viewOn: <string>,
-    pipeline: <pipeline>,
-    collation: <document>,
-    writeConcern: <document>,
-    timeseries: { // Added in MongoDB 5.0
-      timeField: <string>, // required for time series collections
-      metaField: <string>,
-      granularity: <string>,
-      bucketMaxSpanSeconds: <number>, // Added in MongoDB 6.3
-      bucketRoundingSeconds: <number>, // Added in MongoDB 6.3
-    },
-    expireAfterSeconds: <number>,
-    clusteredIndex: <document>, // Added in MongoDB 5.3
-  }
-)*/
+const MONGODB_URL = 'mongodb+srv://ndikumana:iza78289@cluster0.a3mnf.mongodb.net/testDb';
+const PORT = process.env.PORT || 5000;
 
-// More information on the `createCollection` command can be found at:
-// https://www.mongodb.com/docs/manual/reference/method/db.createCollection/
+mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+	.then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
+	.catch((error) => console.log(`${error} did not connect`));
+
+mongoose.set('useFindAndModify', false);
