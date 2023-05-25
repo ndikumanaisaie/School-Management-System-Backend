@@ -1,7 +1,14 @@
 import mongoose from 'mongoose';
 // Course Modal Schema
 const courseSchema = new mongoose.Schema({
-    _id: Number,
+    id: { type: String },
     name: String,
-    teacherId: String
+    teacher: {
+      type: [String],
+      default: [],
+    },
+    enrolledStudent: {
+      type: [String],
+      default: [],
+    },
 });

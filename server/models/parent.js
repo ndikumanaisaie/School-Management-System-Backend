@@ -1,10 +1,14 @@
 import mongoose from 'mongoose';
 // Teacher Modal Schema
-const teacherSchema = new mongoose.Schema({
+const parentSchema = new mongoose.Schema({
+  id: { type: String },
   name: { type: String, required: true },
 	email: { type: String, required: true },
 	password: { type: String, required: false },
 	googleId: { type: String, required: false },
-  studentId: { type: String, required: false },
-	id: { type: String },
+  imageFile: String,
+  student: {
+		type: [String],
+		default: [],
+	},
 })
