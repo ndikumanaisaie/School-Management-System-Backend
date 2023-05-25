@@ -3,5 +3,5 @@ import mongoose from 'mongoose';
 const courseSchema = new mongoose.Schema({
     _id: Number,
     name: String,
-    category: String
+    teacherId: String
 });
