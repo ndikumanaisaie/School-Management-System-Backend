@@ -12,7 +12,7 @@ const teacherSchema = new mongoose.Schema({
 		type: [String],
 		default: [],
 	},
-  teacher: {
+  student: {
 		type: [String],
 		default: [],
 	},
