@@ -17,14 +17,14 @@ app.use(cors());
 // app.use('/users', userRoute);
 // app.use('/posts', postRoute);
 app.get('/', (req, res) => {
-	res.send('APP IS RUNNING');
+  res.send('APP IS RUNNING');
 });
 
 const MONGODB_URL = 'mongodb+srv://ndikumana:iza78289@cluster0.a3mnf.mongodb.net/school_db';
 const PORT = process.env.PORT || 5000;
 
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-	.then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
-	.catch((error) => console.log(`${error} did not connect`));
+  .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
+  .catch((error) => console.log(`${error} did not connect`));
 
 // mongoose.set('useFindAndModify', false);

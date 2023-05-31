@@ -6,15 +6,15 @@ const facultySchema = new mongoose.Schema({
   classes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Classe"
-	  }
+      ref: 'Classe',
+    },
   ],
   department: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Department"
-    }
-  ]
+      ref: 'Department',
+    },
+  ],
 });
 
 export default mongoose.model('Faculties', facultySchema);

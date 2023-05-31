@@ -6,10 +6,9 @@ const departmentSchema = new mongoose.Schema({
   faculties: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Faculty"
-	  }
+      ref: 'Faculty',
+    },
   ],
 });
 
-export default mongoose.model('Departments', departmentsSchema);
-
+export default mongoose.model('Departments', departmentSchema);

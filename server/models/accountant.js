@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 const accountantSchema = new mongoose.Schema({
   id: { type: String },
   name: { type: String, required: true },
-	email: { type: String, required: true },
-	password: { type: String, required: false },
-	googleId: { type: String, required: false },
+  email: { type: String, required: true },
+  password: { type: String, required: false },
+  googleId: { type: String, required: false },
   imageFile: String,
 });
 
-export default mongoose.model('Users', userSchema);
+export default mongoose.model('Accountants', accountantSchema);
