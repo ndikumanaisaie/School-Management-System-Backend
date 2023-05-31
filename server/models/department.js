@@ -3,8 +3,10 @@ import mongoose from 'mongoose';
 const departmentSchema = new mongoose.Schema({
   id: { type: String },
   name: { type: String, required: true },
-  faculties: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "Faculty"
-	},
+  faculties: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Faculty"
+	  }
+  ],
 });

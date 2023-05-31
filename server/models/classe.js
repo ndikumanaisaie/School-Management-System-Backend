@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 // Teacher Modal Schema
-const accountantSchema = new mongoose.Schema({
+const classeSchema = new mongoose.Schema({
   id: { type: String },
   name: { type: String, required: true },
 	teacher: { type: String, required: false },
@@ -8,4 +8,10 @@ const accountantSchema = new mongoose.Schema({
 		type: Date,
 		default: new Date(),
 	},
+	faculty: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Faculty"
+		}
+	],
 });

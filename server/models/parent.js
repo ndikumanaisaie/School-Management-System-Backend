@@ -7,8 +7,10 @@ const parentSchema = new mongoose.Schema({
 	password: { type: String, required: false },
 	googleId: { type: String, required: false },
   imageFile: String,
-  students: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "Student"
-	},
+  students: [
+		{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Student"
+		}
+	],
 });
