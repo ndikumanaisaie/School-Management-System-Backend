@@ -9,7 +9,7 @@ const teacherSchema = new mongoose.Schema({
 	googleId: { type: String, required: false },
   imageFile: String,
   course: {
-		type: [String],
+		type: mongoose.Schema.Types.ObjectId,
 		default: [],
 	},
   studentPresent: {
