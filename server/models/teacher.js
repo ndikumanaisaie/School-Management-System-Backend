@@ -8,9 +8,9 @@ const teacherSchema = new mongoose.Schema({
   password: { type: String, required: false },
 	googleId: { type: String, required: false },
   imageFile: String,
-  course: {
+  courses: {
 		type: mongoose.Schema.Types.ObjectId,
-		default: [],
+		ref: "Course"
 	},
   studentPresent: {
 		type: [String],

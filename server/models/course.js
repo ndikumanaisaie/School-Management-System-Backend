@@ -3,9 +3,9 @@ import mongoose from 'mongoose';
 const courseSchema = new mongoose.Schema({
     id: { type: String },
     name: String,
-    teacher: {
-      type: [String],
-      default: [],
+    teachers: {
+      type: mongoose.Schema.Types.ObjectId,
+		  ref: "Teacher"
     },
     enrolledStudent: {
       type: [String],

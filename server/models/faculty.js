@@ -3,8 +3,8 @@ import mongoose from 'mongoose';
 const facultySchema = new mongoose.Schema({
   id: { type: String },
   name: { type: String, required: true },
-  classe: {
-		type: [String],
-		default: [],
+  classes: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Classe"
 	},
 });

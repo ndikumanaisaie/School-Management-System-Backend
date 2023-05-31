@@ -9,13 +9,13 @@ const studentSchema = new mongoose.Schema({
 	googleId: { type: String, required: false },
   enroll: { type: Number },
   imageFile: String,
-  course: {
-		type: [String],
-		default: [],
+  courses: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Course"
 	},
-  teacher: {
-		type: [String],
-		default: [],
+  teachers: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Teacher"
 	},
 });
 
