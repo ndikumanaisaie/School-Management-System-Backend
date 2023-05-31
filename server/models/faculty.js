@@ -7,4 +7,4 @@ const facultySchema = new mongoose.Schema({
 		type: [String],
 		default: [],
 	},
-})
+});

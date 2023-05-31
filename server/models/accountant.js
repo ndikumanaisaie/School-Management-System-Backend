@@ -7,4 +7,4 @@ const accountantSchema = new mongoose.Schema({
 	password: { type: String, required: false },
 	googleId: { type: String, required: false },
   imageFile: String,
-})
+});

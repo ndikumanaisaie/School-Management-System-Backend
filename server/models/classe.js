@@ -8,5 +8,4 @@ const accountantSchema = new mongoose.Schema({
 		type: Date,
 		default: new Date(),
 	},
-  imageFile: String,
-})
+});

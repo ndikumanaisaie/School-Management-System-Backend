@@ -11,4 +11,4 @@ const parentSchema = new mongoose.Schema({
 		type: [String],
 		default: [],
 	},
-})
+});

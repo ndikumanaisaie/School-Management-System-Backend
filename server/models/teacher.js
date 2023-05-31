@@ -12,8 +12,12 @@ const teacherSchema = new mongoose.Schema({
 		type: [String],
 		default: [],
 	},
-  student: {
+  studentPresent: {
 		type: [String],
 		default: [],
 	},
-})
+  studentAbsent: {
+		type: [String],
+		default: [],
+	},
+});

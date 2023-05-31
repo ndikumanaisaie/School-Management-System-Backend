@@ -7,5 +7,4 @@ const departmentSchema = new mongoose.Schema({
 		type: [String],
 		default: [],
 	},
-  imageFile: String,
-})
+});
