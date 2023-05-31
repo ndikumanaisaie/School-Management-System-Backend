@@ -14,3 +14,5 @@ const parentSchema = new mongoose.Schema({
 		}
 	],
 });
+
+export default mongoose.model('Parents', parentSchema);

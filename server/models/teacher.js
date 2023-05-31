@@ -23,3 +23,5 @@ const teacherSchema = new mongoose.Schema({
 		default: [],
 	},
 });
+
+export default mongoose.model('Teachers', teacherSchema);

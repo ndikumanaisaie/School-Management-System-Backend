@@ -15,3 +15,6 @@ const classeSchema = new mongoose.Schema({
 		}
 	],
 });
+
+
+export default mongoose.model('Classes', classeSchema);

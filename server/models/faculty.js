@@ -16,3 +16,5 @@ const facultySchema = new mongoose.Schema({
     }
   ]
 });
+
+export default mongoose.model('Faculties', facultySchema);

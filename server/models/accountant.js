@@ -8,3 +8,5 @@ const accountantSchema = new mongoose.Schema({
 	googleId: { type: String, required: false },
   imageFile: String,
 });
+
+export default mongoose.model('Users', userSchema);
