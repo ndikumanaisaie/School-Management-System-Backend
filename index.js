@@ -4,7 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 
-// import userRoute from './routes/users.js';
+import userRoute from './routes/user.js';
 // import postRoute from './routes/posts.js';
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(morgan('dev'));
 app.use(express.json({ limit: '30mb', extended: true }));
 app.use(express.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
-// app.use('/users', userRoute);
+app.use('/users', userRoute);
 // app.use('/posts', postRoute);
 app.get('/', (req, res) => {
   res.send('APP IS RUNNING');
