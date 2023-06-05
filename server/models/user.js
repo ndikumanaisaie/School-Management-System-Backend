@@ -6,6 +6,10 @@ const userSchema = mongoose.Schema({
 	password: { type: String, required: false },
 	googleId: { type: String, required: false },
   phoneNumber: { type: Number, required: true },
+	birthDate: {
+    type: Date,
+    default: new Date(),
+  },
 	id: { type: String },
 });
 
