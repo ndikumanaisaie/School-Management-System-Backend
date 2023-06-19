@@ -28,7 +28,7 @@ export const signin = async (req, res) => {
 
 export const signup = async (req, res) => {
 	const {
-		email, password, firstName, lastName,
+		email, password, firstName, lastName, phoneNumber, birthDate,
 	} = req.body;
 	try {
 		const oldUser = await UserModel.findOne({ email });
@@ -36,10 +36,10 @@ export const signup = async (req, res) => {
 		if (oldUser) {
 			return res.status(400).json({ message: 'User already exists' });
 		}
-
+		console.log(new Date(birthDate));
 		const hashPassoword = await bcrypt.hash(password, 12);
 		const result = await UserModel.create({
-			email, password: hashPassoword, name: `${firstName} ${lastName}`,
+			email, password: hashPassoword, name: `${firstName} ${lastName}`, phoneNumber, birthDate,
 		});
 
 		const token = jwt.sign({ email: result.email, id: result._id }, secret, { expiresIn: '1h' });
