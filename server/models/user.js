@@ -1,16 +1,16 @@
 import mongoose from 'mongoose';
 
 const userSchema = mongoose.Schema({
-	name: { type: String, required: true },
-	email: { type: String, required: true },
-	password: { type: String, required: false },
-	googleId: { type: String, required: false },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: false },
+  googleId: { type: String, required: false },
   phoneNumber: { type: Number, required: true },
-	birthDate: {
+  birthDate: {
     type: Date,
     default: new Date(),
   },
-	id: { type: String },
+  id: { type: String },
 });
 
 export default mongoose.model('Users', userSchema);

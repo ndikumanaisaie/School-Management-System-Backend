@@ -4,7 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 
-import userRoute from './server/routes/user.js'
+import userRoute from './server/routes/user.js';
 // import postRoute from './routes/posts.js';
 
 const app = express();
