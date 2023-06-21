@@ -1,14 +1,22 @@
 import mongoose from 'mongoose';
 // Student Modal Schema
 const studentSchema = new mongoose.Schema({
-  id: { type: String },
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: false },
-  googleId: { type: String, required: false },
+  generalInformation: {
+    email: { type: String, required: true },
+    gender : { type: String, required: false },
+    nationality : { type: String, required: false },
+    address : { type: String, required: false },
+    phoneNumber : { type: String, required: false },
+    imageFile: String,
+    badgeId: { type: String, required: false },
+  }, 
+  privateInformation: {
+    bloodGroup: { type: String, required: true },
+    emergencyContact : { type: String, required: false },
+    user : { type: String, required: false },
+    partner : { type: String, required: false },
+  },
   enroll: { type: Number },
-  imageFile: String,
   courses: [
     {
       type: mongoose.Schema.Types.ObjectId,
